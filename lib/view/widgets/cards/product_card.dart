@@ -26,10 +26,11 @@ class ProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppDimensions.radiusM),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             // Image Area
-            Expanded(
-              flex: 5,
+            AspectRatio(
+              aspectRatio: 1.0,
               child: Stack(
                 children: [
                   Container(
@@ -103,16 +104,17 @@ class ProductCard extends StatelessWidget {
             ),
             
             // Product Info
-            Expanded(
-              flex: 4,
+            Flexible(
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           product.name,
@@ -136,33 +138,39 @@ class ProductCard extends StatelessWidget {
                       ],
                     ),
                     
+                    const SizedBox(height: 8),
+                    
                     Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                if (product.hasDiscount)
+                            Flexible(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  if (product.hasDiscount)
+                                    Text(
+                                      '${product.price.toStringAsFixed(2)} DT',
+                                      style: const TextStyle(
+                                        fontSize: 10,
+                                        color: AppColors.textSecondary,
+                                        decoration: TextDecoration.lineThrough,
+                                        decorationColor: AppColors.textSecondary,
+                                      ),
+                                    ),
                                   Text(
-                                    '${product.price.toStringAsFixed(2)} DT',
+                                    '${product.displayPrice.toStringAsFixed(2)} DT',
                                     style: const TextStyle(
-                                      fontSize: 10,
-                                      color: AppColors.textSecondary,
-                                      decoration: TextDecoration.lineThrough,
-                                      decorationColor: AppColors.textSecondary,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.primary,
                                     ),
                                   ),
-                                Text(
-                                  '${product.displayPrice.toStringAsFixed(2)} DT',
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.primary,
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             if (product.rating != null)
                               Container(
@@ -176,6 +184,7 @@ class ProductCard extends StatelessWidget {
                                   )
                                 ),
                                 child: Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     const Icon(Icons.star, size: 10, color: AppColors.warning),
                                     const SizedBox(width: 4),
