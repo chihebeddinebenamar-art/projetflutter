@@ -26,11 +26,18 @@ class ProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppDimensions.radiusM),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+<<<<<<< HEAD
           mainAxisSize: MainAxisSize.min,
           children: [
             // Image Area
             AspectRatio(
               aspectRatio: 1.0,
+=======
+          children: [
+            // Image Area
+            Expanded(
+              flex: 5,
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
               child: Stack(
                 children: [
                   Container(
@@ -104,17 +111,28 @@ class ProductCard extends StatelessWidget {
             ),
             
             // Product Info
+<<<<<<< HEAD
             Flexible(
+=======
+            Expanded(
+              flex: 4,
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+<<<<<<< HEAD
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
+=======
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
                       children: [
                         Text(
                           product.name,
@@ -138,14 +156,19 @@ class ProductCard extends StatelessWidget {
                       ],
                     ),
                     
+<<<<<<< HEAD
                     const SizedBox(height: 8),
                     
                     Column(
                       mainAxisSize: MainAxisSize.min,
+=======
+                    Column(
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+<<<<<<< HEAD
                             Flexible(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,6 +194,30 @@ class ProductCard extends StatelessWidget {
                                   ),
                                 ],
                               ),
+=======
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (product.hasDiscount)
+                                  Text(
+                                    '${product.price.toStringAsFixed(2)} DT',
+                                    style: const TextStyle(
+                                      fontSize: 10,
+                                      color: AppColors.textSecondary,
+                                      decoration: TextDecoration.lineThrough,
+                                      decorationColor: AppColors.textSecondary,
+                                    ),
+                                  ),
+                                Text(
+                                  '${product.displayPrice.toStringAsFixed(2)} DT',
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.primary,
+                                  ),
+                                ),
+                              ],
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
                             ),
                             if (product.rating != null)
                               Container(
@@ -184,7 +231,10 @@ class ProductCard extends StatelessWidget {
                                   )
                                 ),
                                 child: Row(
+<<<<<<< HEAD
                                   mainAxisSize: MainAxisSize.min,
+=======
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
                                   children: [
                                     const Icon(Icons.star, size: 10, color: AppColors.warning),
                                     const SizedBox(width: 4),

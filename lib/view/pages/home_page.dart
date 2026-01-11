@@ -78,6 +78,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   List<Product> _getDemoProducts() {
+<<<<<<< HEAD
   return [
 
     // 🟣 FEMME
@@ -199,6 +200,103 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   ];
 }
 
+=======
+    return [
+      Product(
+        id: 1,
+        name: 'Tenue médicale bleue',
+        description: 'Ensemble médical confortable et respirant.',
+        price: 95.0,
+        finalPrice: 85.5,
+        size: 'M',
+        color: 'Bleu',
+        stockQuantity: 50,
+        categoryId: 3,
+        categoryName: 'Femme',
+        discount: 10,
+        discountActive: true,
+        images: [ProductImage(id: 1, url: _getProductImagePath(1, 'Femme'), productId: 1)],
+        rating: 4.0,
+      ),
+      Product(
+        id: 2,
+        name: 'Tenue médicale rose',
+        description: 'Style moderne pour étudiantes.',
+        price: 110.0,
+        finalPrice: 93.5,
+        size: 'S',
+        color: 'Rose',
+        stockQuantity: 30,
+        categoryId: 3,
+        categoryName: 'Femme',
+        discount: 15,
+        discountActive: true,
+        images: [ProductImage(id: 2, url: _getProductImagePath(2, 'Femme'), productId: 2)],
+        rating: 4.5,
+      ),
+      Product(
+        id: 3,
+        name: 'Tenue noire homme',
+        description: 'Élégance et professionnalisme.',
+        price: 100.0,
+        size: 'L',
+        color: 'Noir',
+        stockQuantity: 40,
+        categoryId: 2,
+        categoryName: 'Homme',
+        discount: null,
+        discountActive: false,
+        images: [ProductImage(id: 3, url: _getProductImagePath(3, 'Homme'), productId: 3)],
+        rating: 3.0,
+      ),
+      Product(
+        id: 4,
+        name: 'Sabots "Love & Butterfly"',
+        description: 'Confort maximal pour longues gardes.',
+        price: 45.0,
+        size: '40',
+        color: 'Rose',
+        stockQuantity: 25,
+        categoryId: 4,
+        categoryName: 'Mixte',
+        discount: null,
+        discountActive: false,
+        images: [ProductImage(id: 4, url: _getProductImagePath(4, 'Mixte'), productId: 4)],
+        rating: 3.5,
+      ),
+      Product(
+        id: 5,
+        name: 'Tenue médicale verte',
+        description: 'Résistant et facile à entretenir.',
+        price: 90.0,
+        size: 'M',
+        color: 'Vert',
+        stockQuantity: 35,
+        categoryId: 2,
+        categoryName: 'Homme',
+        discount: 5,
+        discountActive: true,
+        images: [ProductImage(id: 5, url: _getProductImagePath(5, 'Homme'), productId: 5)],
+        rating: 4.2,
+      ),
+      Product(
+        id: 6,
+        name: 'Blouse blanche classique',
+        description: 'Coupe ajustée et professionnelle.',
+        price: 75.0,
+        size: 'S',
+        color: 'Blanc',
+        stockQuantity: 60,
+        categoryId: 3,
+        categoryName: 'Femme',
+        discount: null,
+        discountActive: false,
+        images: [ProductImage(id: 6, url: _getProductImagePath(6, 'Femme'), productId: 6)],
+        rating: 4.8,
+      ),
+    ];
+  }
+>>>>>>> 619509c19827aea8adf04d5903e955211f786c41
 
   List<Product> get filteredProducts {
     List<Product> filtered = products;
